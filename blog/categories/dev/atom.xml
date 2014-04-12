@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: dev | UI Foundations]]></title>
-  <link href="http://86.github.io/blog/categories/dev/atom.xml" rel="self"/>
-  <link href="http://86.github.io/"/>
-  <updated>2014-04-12T17:26:35+09:00</updated>
-  <id>http://86.github.io/</id>
+  <link href="http://86.triaedz.com/blog/categories/dev/atom.xml" rel="self"/>
+  <link href="http://86.triaedz.com/"/>
+  <updated>2014-04-12T17:33:48+09:00</updated>
+  <id>http://86.triaedz.com/</id>
   <author>
     <name><![CDATA[86]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。]]></title>
-    <link href="http://86.github.io/blog/2014/04/04/hotentry/"/>
+    <link href="http://86.triaedz.com/blog/2014/04/04/hotentry/"/>
     <updated>2014-04-04T14:14:00+09:00</updated>
-    <id>http://86.github.io/blog/2014/04/04/hotentry</id>
+    <id>http://86.triaedz.com/blog/2014/04/04/hotentry</id>
     <content type="html"><![CDATA[<p>はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。
 App Store のリンクとアプリの紹介ページは以下になります。</p>
 
