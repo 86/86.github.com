@@ -3,7 +3,7 @@
   <title><![CDATA[UI Foundations]]></title>
   <link href="http://86.triaedz.com/atom.xml" rel="self"/>
   <link href="http://86.triaedz.com/"/>
-  <updated>2014-04-12T23:18:03+09:00</updated>
+  <updated>2014-04-15T01:52:30+09:00</updated>
   <id>http://86.triaedz.com/</id>
   <author>
     <name><![CDATA[86]]></name>
@@ -13,6 +13,143 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Hotentryができるまで (1) - メインビュー]]></title>
+    <link href="http://86.triaedz.com/blog/2014/04/12/makingofhotentry01/"/>
+    <updated>2014-04-12T23:54:00+09:00</updated>
+    <id>http://86.triaedz.com/blog/2014/04/12/makingofhotentry01</id>
+    <content type="html"><![CDATA[<p>今回からはてなブックマークのホットエントリー専用リーダー Hotentry がどういう思想で作られたか、何回かに分けてお送りしていきます。第1回目はメインビューについて。</p>
+
+<div id='com-triaedz-hotentry' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<p> <!-- more --></p>
+
+<h2>３ペイン構成のメインビュー</h2>
+
+<p><img src="http://86.triaedz.com/images/mainView.png" title="メインビュー。左から「お気に入り」、「新しいエントリー」、「アーカイブ」。" alt="メインビュー" /></p>
+
+<p><em>____メインビューの構成は「お気に入り」、「新しいエントリー」、「アーカイブ」の3つのリストが横並びになっています。（画面に表示されるのは1つのリストのみ。）最初からこのような構成だったのでしょうか？</em></p>
+
+<p>はい。メールでいうところの受信トレイが中央にまずあって、見るべきエントリーとそうではないエントリーをスワイプで左右に振り分けていくというのは構想検討時から実現したい機能の一つでした。</p>
+
+<p><em>____ Mailbox という有名な iOS のメールアプリがありますが、同じ操作性ですよね。</em></p>
+
+<div id='com-orchestra-v2' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/mailbox/id576502633?mt=8&uo=4' target='_blank'><img src='http://a638.phobos.apple.com/us/r30/Purple4/v4/c0/79/44/c07944b7-2afd-8904-f894-642cb4776137/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/mailbox/id576502633?mt=8&uo=4' target='_blank'>Mailbox</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/dropbox/id327630333?uo=4' target='_blank'>Dropbox</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<p>そうですね。でも構想検討時は Mailbox を使ったことなかったんですよ。話題になっていたので名前は知ってましたが。影響を受けたのは Clear の方ですね。大量のエントリーを効率良く、楽しく消化するにはこれだろうと。で、同じことができるオープンソースライブラリーを探していたら <a href="https://github.com/alikaragoz/MCSwipeTableViewCell">MCSwipeTableViewCell</a> というのを見つけて、 Mailbox と同じ操作を実現できるやつって説明があって。それで Mailbox を入れてみたんですよ。で、あーやられたなーって。</p>
+
+<p><em>____ Clear は個性的なジェスチャーによる操作で話題なった ToDo アプリですね。</em></p>
+
+<div id='com-realmacsoftware-clear' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/clear-tasks-to-do-list/id493136154?mt=8&uo=4' target='_blank'><img src='http://a1469.phobos.apple.com/us/r30/Purple/v4/f1/eb/4e/f1eb4ecd-b098-0098-58cb-d48b32b9b275/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/clear-tasks-to-do-list/id493136154?mt=8&uo=4' target='_blank'>Clear – Tasks & To-Do List</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/realmac-software/id310591643?uo=4' target='_blank'>Realmac Software</a>
+            </li>
+            <li class='app-price'>
+                ¥500
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<p>UIマニアとしてはコレクションに加えなければいけない逸品ですね。実用性は全くなかったですけど笑</p>
+
+<p><em>____ああ、ハハハ..。</em></p>
+
+<h2>セルのスワイプ操作について</h2>
+
+<p><img class="left" src="http://86.triaedz.com/images/swipe.png" width="300" height="400" title="セルのスワイプ。左が「Mailbox」、右が「Hotentry」。" alt="スワイプ"></p>
+
+<p><em>____セルのスワイプ操作ですが Mailbox はスワイプの量によって発動する機能が変わるようになってますよね。</em></p>
+
+<p>あれはやりすぎですよね。普通に誤操作を引き起こすんで。あれを使いわけるには相当な精度での操作が必要ですよ。それこそスタープラチナ級の。なんで Hotentry ではそれはやっていません。あと <a href="https://github.com/alikaragoz/MCSwipeTableViewCell">MCSwipeTableViewCell</a> は操作のトリガーがかかるポイントが%指定なんですね。 Hotentry は横向きのビューもサポートしています。そうすると、縦向きと横向きでトリガーがかかるまでに
+スワイプする量が変わってしまうんです。これは使いにくかったのでトリガー位置をポイントで指定できるようにカスタマイズしました。</p>
+
+<h2>ボタンは画面下部に集約</h2>
+
+<p><img class="right" src="http://86.triaedz.com/images/bottombar.png" width="300" height="100" title="ボタンは下部のツールバーに集約。" alt="ツールバー"></p>
+
+<p><em>____その他の特徴ですが、ボタン類がすべて画面下部のツールバーに配置されてますね。 iOS の場合、普通は画面上部のナビゲーションバーに配置するのがセオリーですよね。意図的にそうしているのでしょうか？</em></p>
+
+<p>みんな本当は下の方が良いと思ってますよね？上にあると片手操作が無理になるんで。でも普通の大手メーカーであれば下だけにするリスクはとれないと思います。 Apple の UI ガイドラインを満たしていないと見られる可能性もありますから。でも、私は失うものは何もないので。むしろ大手と差別化ができるというように考えています。慣れれば絶対に下の方が良いのは明らかですから。ただ、 Apple が想定していないことをやろうとすると、実装が急激に大変になるんですよね。なので、頻繁に使わないであろう設定画面では普通に上部にナビゲーションバーを配置して使っています。</p>
+
+<p><em>____なるほど。そのメインビューの下部に左から「お気に入り」、「新しいエントリー」、「アーカイブ」の３つのリストを切り替えるボタンがありますね。押すと、スライドアニメーションとともにリストが切り替わります。</em></p>
+
+<p>やっぱりアニメーションがあると気持ちいいですよね。まあここは好みもあって、 iOS7 のアニメーションが過剰だっていう人も多いようですね。私は好きなので使っていきますよ。</p>
+
+<h2>ジェスチャーによるリストの切り替え</h2>
+
+<p><em>____ v1.1.0 からジェスチャーでもリストの切り替えができるようになりました。</em></p>
+
+<p>ええ。リストのセルをスワイプして他のリストに移す操作はコアとなる機能だと考えていたので最初から入れていますが、基本的にジェスチャーはショートカット的な位置づけにするのが無難ですよね。ジェスチャーが有効かどうかUIから判別できるようにするのは難しいですから。なので、まずはジェスチャーなしで成立するように作って、あとから追加しようと思っていました。</p>
+
+<p><em>____画面端からのスワイプはリスト自体の移動、端から少し内側でスワイプする場合はセルが移動するんですね。</em></p>
+
+<p><img class="left" src="http://86.triaedz.com/images/swipe2.png" width="280" height="400" title="タッチ開始位置による動作の違い。" alt="タッチ開始位置による動作の違い。"></p>
+
+<p>セルのスワイプがまずありきでしたので、それを邪魔しないジェスチャーを選択する必要がありました。1本指かつ既存のジェスチャーだと画面端のスワイプしかなかったですね。 iOS ではあらかじめいくつかのジェスチャーが用意されていて、画面端のスワイプも用意されています。なので普通はそれを使えばよいんですが、今回はセルのスワイプ、リストのスクロールとも両立させる必要があったので、自前でタッチイベントを取得して判定するようにしています。</p>
+
+<h2>背景色でリストをさりげなく差別化</h2>
+
+<p><img class="right" src="http://86.triaedz.com/images/topbar.png" title="背景色でリストをさりげなく差別化" alt="トップバー"></p>
+
+<p><em>____その他に何か工夫したことは？</em></p>
+
+<p>3つのリストの差別化ですかね。「新しいエントリー」は白ベースですが、「お気に入り」は黄色、「アーカイブ」は緑というように機能ごとに色を割り当てることで、違いをわかりやすくしています。ただ、 Hotentry は毎日使ってもらうことを想定しています。大きく色を変えてしまうと煩雑さが増し、目疲れすることも考えられますので、白ベースを保ちたいという相反する思いもありました。そこでリストの背景色のみを色づけするという方法をとりました。セル部分は不透明の白で統一しているたため色づきませんが、セルがない半透明の上部バーなどでは背景色がうっすらと透けるよいうになります。これでさりげなく3つのリストを差別化することができたと思っています。</p>
+
+<p><em>____なるほど。さりげなくがポイントなんですね。長くなってきたので今日はこの辺にしましょうか。貴重なお話どうもありがとうございました。</em></p>
+
+<p>ありがとうございました。以上、まるでインタビューを受けているかのように(ry</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。]]></title>
     <link href="http://86.triaedz.com/blog/2014/04/04/hotentry/"/>
     <updated>2014-04-04T14:14:00+09:00</updated>
@@ -20,19 +157,36 @@
     <content type="html"><![CDATA[<p>はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。
 App Store のリンクとアプリの紹介ページは以下になります。</p>
 
-<p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&amp;uo=4"><img src="http://86.triaedz.com/images/app_hotentry_120.png" alt="Hotentry" /></a></p>
+<div id='com-triaedz-hotentry' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
 
-<p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&amp;uo=4">Hotentry - はてなブックマークの人気エントリー専用リーダー (App Store)</a></p>
+        </ul>
+    </div>
+</div>
+
 
 <p><a href="http://triaedz.com/products/Hotentry/">Hotentry (アプリの紹介ページ)</a></p>
 
 <p>アプリの詳細は別途このブログに書いていきますが、今回は作った背景についてです。</p>
 
+<p> <!-- more --></p>
+
 <p>私がプログラミングや開発関連のことに興味を持ったのはたぶん5年くらい前のことだったと思います。それでどうやってそのあたりの技術などを身につけていくかといったことを考えて、やり始めたことの一つにはてなブックマークの人気エントリー、通称ホッテントリを読むというのがありました。</p>
 
 <p>当時はあまちゃんさん、ダンコーガイさんなどが猛威をふるっており、内容はよく理解できないまま、PerlやJavaScript、セキュリティ関連の話を読んだりしていました。今よりも技術的な話題が豊富で、最初にはじめるべきプログラミング言語は何か、PHP()など、何も知らない私には勉強になることばかりでした。そんな感じでホットエントリーをGoogleReaderに登録して長い間読んできましたが、ある時から配信される数が急激に増えました。1日30件くらいだったところが100件くらいになったと思います。他にもたくさんのブログをRSSリーダーに登録していましたので、この時点で消化するのがつらくなってきました。</p>
-
-<p> <!-- more --></p>
 
 <p>そんな中、忘れもしない2013年3月13日、GoogleからGoogleリーダー終了のお知らせがでました。私は泣く泣くFeedlyに乗り換えましたが、そのときに見るべきものに出会う確率が減ってきていると感じたコンテンツはばっさり切りました。ホットエントリーもこのときに購読を止めました。でも一度身についた習慣は変えられず、ホットエントリーが気になってしょうがありません。その結果、はてな製のiOSアプリを入れて暇なときに見にいくようになりました。でも同じエントリーがずっと上位にいすわっているんですよね。私が見たいのはホットエントリーの中の新着エントリーですが、それはかないませんでした。他のアプリなども試してみましたが自分の求めるものはなかったので、この時点で作ることを決意しました。ちょうと１年くらい前だと思います。</p>
 
@@ -66,9 +220,26 @@ App Store のリンクとアプリの紹介ページは以下になります。<
 
 <p>これですね。これを実現したのがHotentryになります。簡単に言うと、未読がたまらない、ホットエントリー専用RSSリーダーです。おかげで苦痛もなくスマートに大好きなホットエントリーを消化できるようになりました。個人的にはとても満足しています。同じような問題を抱えている方がいたら是非使ってもらいたいです。</p>
 
-<p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&amp;uo=4"><img src="http://86.triaedz.com/images/app_hotentry_120.png" alt="Hotentry" /></a></p>
+<div id='com-triaedz-hotentry' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
 
-<p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&amp;uo=4">Hotentry - はてなブックマークの人気エントリー専用リーダー (App Store)</a></p>
+        </ul>
+    </div>
+</div>
+
 
 <p>しくみなどの詳細は後日このブログに書いていきたいと思います。</p>
 ]]></content>
@@ -81,6 +252,8 @@ App Store のリンクとアプリの紹介ページは以下になります。<
     <id>http://86.triaedz.com/blog/2014/03/27/presso</id>
     <content type="html"><![CDATA[<p>はてなから最新ニュースリーダーアプリPressoがでてきましたね。
 時間がないけどもやもやするので、最速でレビュー!</p>
+
+<p> <!-- more --></p>
 
 <ul>
 <li>記事のリスト見にくい。画像がでかすぎる。でか画像にはさまれた画像なしの記事は完全に埋没。</li>
@@ -97,11 +270,51 @@ App Store のリンクとアプリの紹介ページは以下になります。<
 
 <p>という感じで個人的にはフィットしない感じですが、ライトはてなユーザーを拡大するという役割は十二分に果たしてくれそうです。ダウンロードは以下より。</p>
 
-<p><a href="https://itunes.apple.com/jp/app/id799334646">Presso：ソーシャルニュース　まとめもブログも話題の記事をお届け</a></p>
+<div id='jp-ne-hatena-b-presso' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/presso-sosharunyusu-matomemoburogumo/id799334646?mt=8&uo=4' target='_blank'><img src='http://a772.phobos.apple.com/us/r30/Purple6/v4/6a/a8/51/6aa85185-c8d2-b2c5-b23c-9acf94d89cd2/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/presso-sosharunyusu-matomemoburogumo/id799334646?mt=8&uo=4' target='_blank'>Presso：ソーシャルニュース　まとめもブログも話題の記事をお届け</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/zhu-shi-hui-shehatena/id354976662?uo=4' target='_blank'>株式会社はてな</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
+
+        </ul>
+    </div>
+</div>
+
 
 <p>私も密かにはてなブックマークのiOSアプリを最近リリースしたので、Pressoがあわないという方がいたら試していただけるとうれしいです。効率重視のミニマリスト向けホットエントリー専用リーダーです。</p>
 
-<p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&amp;uo=4">Hotentry - はてなブックマークの人気エントリー専用リーダー</a></p>
+<div id='com-triaedz-hotentry' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+
 ]]></content>
   </entry>
   

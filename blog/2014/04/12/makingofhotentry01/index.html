@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hotentryができるまで (1) - メインビュー - UI Foundations</title>
+  <meta name="author" content="86">
+
+  
+  <meta name="description" content="今回からはてなブックマークのホットエントリー専用リーダー Hotentry がどういう思想で作られたか、何回かに分けてお送りしていきます。第1回目はメインビューについて。 Hotentry - はてなブックマークの人気エントリー専用リーダー DAISUKE YAMANAKA 無料 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://86.triaedz.com/blog/2014/04/12/makingofhotentry01/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="UI Foundations" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+<link href="/stylesheets/appbox.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <img src="/images/ah_frame_transparent.png" />
+  <h1><a href="/">UI Foundations</a></h1>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Hotentryができるまで (1) - メインビュー</h1>
+    
+  </header>
+
+
+
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/dev/'>dev</a>
+  
+</span>
+
+
+<div class="entry-content"><p>今回からはてなブックマークのホットエントリー専用リーダー Hotentry がどういう思想で作られたか、何回かに分けてお送りしていきます。第1回目はメインビューについて。</p>
+
+<div id='com-triaedz-hotentry' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<p> <!-- more --></p>
+
+<h2>３ペイン構成のメインビュー</h2>
+
+<p><img src="/images/mainView.png" title="メインビュー。左から「お気に入り」、「新しいエントリー」、「アーカイブ」。" alt="メインビュー" /></p>
+
+<p><em>____メインビューの構成は「お気に入り」、「新しいエントリー」、「アーカイブ」の3つのリストが横並びになっています。（画面に表示されるのは1つのリストのみ。）最初からこのような構成だったのでしょうか？</em></p>
+
+<p>はい。メールでいうところの受信トレイが中央にまずあって、見るべきエントリーとそうではないエントリーをスワイプで左右に振り分けていくというのは構想検討時から実現したい機能の一つでした。</p>
+
+<p><em>____ Mailbox という有名な iOS のメールアプリがありますが、同じ操作性ですよね。</em></p>
+
+<div id='com-orchestra-v2' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/mailbox/id576502633?mt=8&uo=4' target='_blank'><img src='http://a638.phobos.apple.com/us/r30/Purple4/v4/c0/79/44/c07944b7-2afd-8904-f894-642cb4776137/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/mailbox/id576502633?mt=8&uo=4' target='_blank'>Mailbox</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/dropbox/id327630333?uo=4' target='_blank'>Dropbox</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<p>そうですね。でも構想検討時は Mailbox を使ったことなかったんですよ。話題になっていたので名前は知ってましたが。影響を受けたのは Clear の方ですね。大量のエントリーを効率良く、楽しく消化するにはこれだろうと。で、同じことができるオープンソースライブラリーを探していたら <a href="https://github.com/alikaragoz/MCSwipeTableViewCell">MCSwipeTableViewCell</a> というのを見つけて、 Mailbox と同じ操作を実現できるやつって説明があって。それで Mailbox を入れてみたんですよ。で、あーやられたなーって。</p>
+
+<p><em>____ Clear は個性的なジェスチャーによる操作で話題なった ToDo アプリですね。</em></p>
+
+<div id='com-realmacsoftware-clear' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/clear-tasks-to-do-list/id493136154?mt=8&uo=4' target='_blank'><img src='http://a1469.phobos.apple.com/us/r30/Purple/v4/f1/eb/4e/f1eb4ecd-b098-0098-58cb-d48b32b9b275/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/clear-tasks-to-do-list/id493136154?mt=8&uo=4' target='_blank'>Clear – Tasks & To-Do List</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/realmac-software/id310591643?uo=4' target='_blank'>Realmac Software</a>
+            </li>
+            <li class='app-price'>
+                ¥500
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<p>UIマニアとしてはコレクションに加えなければいけない逸品ですね。実用性は全くなかったですけど笑</p>
+
+<p><em>____ああ、ハハハ..。</em></p>
+
+<h2>セルのスワイプ操作について</h2>
+
+<p><img class="left" src="/images/swipe.png" width="300" height="400" title="セルのスワイプ。左が「Mailbox」、右が「Hotentry」。" alt="スワイプ"></p>
+
+<p><em>____セルのスワイプ操作ですが Mailbox はスワイプの量によって発動する機能が変わるようになってますよね。</em></p>
+
+<p>あれはやりすぎですよね。普通に誤操作を引き起こすんで。あれを使いわけるには相当な精度での操作が必要ですよ。それこそスタープラチナ級の。なんで Hotentry ではそれはやっていません。あと <a href="https://github.com/alikaragoz/MCSwipeTableViewCell">MCSwipeTableViewCell</a> は操作のトリガーがかかるポイントが%指定なんですね。 Hotentry は横向きのビューもサポートしています。そうすると、縦向きと横向きでトリガーがかかるまでに
+スワイプする量が変わってしまうんです。これは使いにくかったのでトリガー位置をポイントで指定できるようにカスタマイズしました。</p>
+
+<h2>ボタンは画面下部に集約</h2>
+
+<p><img class="right" src="/images/bottombar.png" width="300" height="100" title="ボタンは下部のツールバーに集約。" alt="ツールバー"></p>
+
+<p><em>____その他の特徴ですが、ボタン類がすべて画面下部のツールバーに配置されてますね。 iOS の場合、普通は画面上部のナビゲーションバーに配置するのがセオリーですよね。意図的にそうしているのでしょうか？</em></p>
+
+<p>みんな本当は下の方が良いと思ってますよね？上にあると片手操作が無理になるんで。でも普通の大手メーカーであれば下だけにするリスクはとれないと思います。 Apple の UI ガイドラインを満たしていないと見られる可能性もありますから。でも、私は失うものは何もないので。むしろ大手と差別化ができるというように考えています。慣れれば絶対に下の方が良いのは明らかですから。ただ、 Apple が想定していないことをやろうとすると、実装が急激に大変になるんですよね。なので、頻繁に使わないであろう設定画面では普通に上部にナビゲーションバーを配置して使っています。</p>
+
+<p><em>____なるほど。そのメインビューの下部に左から「お気に入り」、「新しいエントリー」、「アーカイブ」の３つのリストを切り替えるボタンがありますね。押すと、スライドアニメーションとともにリストが切り替わります。</em></p>
+
+<p>やっぱりアニメーションがあると気持ちいいですよね。まあここは好みもあって、 iOS7 のアニメーションが過剰だっていう人も多いようですね。私は好きなので使っていきますよ。</p>
+
+<h2>ジェスチャーによるリストの切り替え</h2>
+
+<p><em>____ v1.1.0 からジェスチャーでもリストの切り替えができるようになりました。</em></p>
+
+<p>ええ。リストのセルをスワイプして他のリストに移す操作はコアとなる機能だと考えていたので最初から入れていますが、基本的にジェスチャーはショートカット的な位置づけにするのが無難ですよね。ジェスチャーが有効かどうかUIから判別できるようにするのは難しいですから。なので、まずはジェスチャーなしで成立するように作って、あとから追加しようと思っていました。</p>
+
+<p><em>____画面端からのスワイプはリスト自体の移動、端から少し内側でスワイプする場合はセルが移動するんですね。</em></p>
+
+<p><img class="left" src="/images/swipe2.png" width="280" height="400" title="タッチ開始位置による動作の違い。" alt="タッチ開始位置による動作の違い。"></p>
+
+<p>セルのスワイプがまずありきでしたので、それを邪魔しないジェスチャーを選択する必要がありました。1本指かつ既存のジェスチャーだと画面端のスワイプしかなかったですね。 iOS ではあらかじめいくつかのジェスチャーが用意されていて、画面端のスワイプも用意されています。なので普通はそれを使えばよいんですが、今回はセルのスワイプ、リストのスクロールとも両立させる必要があったので、自前でタッチイベントを取得して判定するようにしています。</p>
+
+<h2>背景色でリストをさりげなく差別化</h2>
+
+<p><img class="right" src="/images/topbar.png" title="背景色でリストをさりげなく差別化" alt="トップバー"></p>
+
+<p><em>____その他に何か工夫したことは？</em></p>
+
+<p>3つのリストの差別化ですかね。「新しいエントリー」は白ベースですが、「お気に入り」は黄色、「アーカイブ」は緑というように機能ごとに色を割り当てることで、違いをわかりやすくしています。ただ、 Hotentry は毎日使ってもらうことを想定しています。大きく色を変えてしまうと煩雑さが増し、目疲れすることも考えられますので、白ベースを保ちたいという相反する思いもありました。そこでリストの背景色のみを色づけするという方法をとりました。セル部分は不透明の白で統一しているたため色づきませんが、セルがない半透明の上部バーなどでは背景色がうっすらと透けるよいうになります。これでさりげなく3つのリストを差別化することができたと思っています。</p>
+
+<p><em>____なるほど。さりげなくがポイントなんですね。長くなってきたので今日はこの辺にしましょうか。貴重なお話どうもありがとうございました。</em></p>
+
+<p>ありがとうございました。以上、まるでインタビューを受けているかのように(ry</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">86</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-12T23:54:00+09:00" pubdate data-updated="true">Apr 12<span>th</span>, 2014</time>
+    </p>
+    
+      <div class="sharing">
+
+	<a href="http://b.hatena.ne.jp/entry/http://86.triaedz.com/blog/2014/04/12/makingofhotentry01/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hotentryができるまで (1) - メインビュー" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://86.triaedz.com/blog/2014/04/12/makingofhotentry01/" data-via="86" data-counturl="http://86.triaedz.com/blog/2014/04/12/makingofhotentry01/" >Tweet</a>
+  
+
+  
+
+  
+	<div class="fb-like" data-href="http://86.triaedz.com/blog/2014/04/12/makingofhotentry01/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+   
+
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/04/04/hotentry/" title="Previous Post: はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。">&laquo; はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/12/makingofhotentry01/">Hotentryができるまで (1) - メインビュー</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/04/hotentry/">はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/27/presso/">Presso</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/18/hello/">hello!</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>About Me</h1>
+  <p><a href="http://yam86.flavors.me/">flavors.me</a></p>
+</section>
+<section>
+  <h1>My Products</h1>
+  <p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4"><img src="/images/app_hotentry_120.png"><br/>Hotentry</a></p>
+</section>
+<section>
+  <h1>Latest Tweets</h1>
+<a class="twitter-timeline" href="https://twitter.com/86" data-widget-id="451350905808371713">@86 からのツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+<section>
+  <h1>Other links</h1>
+  <ul>
+	  <li><a href="http://www.pinterest.com/yam86/">Pinterest</a></li>
+	  <li><a href="http://instagram.com/86">Instagram</a></li>
+	  <li><a href="http://soundcloud.com/yam86">SoundCloud</a></li>
+	  <li><a href="http://qiita.com/yam86">Qiita</a></li>
+	  <li><a href="https://github.com/86">Github</a></li>
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - 86 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/javascripts/aharris.js"></script>
+
+</body>
+</html>

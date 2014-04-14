@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。
-App Store のリンクとアプリの紹介ページは以下になります。 Hotentry - はてなブックマークの人気エントリー専用リーダー (App Store) Hotentry (アプリの紹介ページ) &hellip;">
+App Store のリンクとアプリの紹介ページは以下になります。 Hotentry - はてなブックマークの人気エントリー専用リーダー DAISUKE YAMANAKA 無料 Hotentry ( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +29,7 @@ App Store のリンクとアプリの紹介ページは以下になります。 
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+<link href="/stylesheets/appbox.css" media="screen, projection" rel="stylesheet" type="text/css">
 
   
 
@@ -65,19 +66,36 @@ App Store のリンクとアプリの紹介ページは以下になります。 
 <div class="entry-content"><p>はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。
 App Store のリンクとアプリの紹介ページは以下になります。</p>
 
-<p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&amp;uo=4"><img src="/images/app_hotentry_120.png" alt="Hotentry" /></a></p>
+<div id='com-triaedz-hotentry' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
 
-<p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&amp;uo=4">Hotentry - はてなブックマークの人気エントリー専用リーダー (App Store)</a></p>
+        </ul>
+    </div>
+</div>
+
 
 <p><a href="http://triaedz.com/products/Hotentry/">Hotentry (アプリの紹介ページ)</a></p>
 
 <p>アプリの詳細は別途このブログに書いていきますが、今回は作った背景についてです。</p>
 
+<p> <!-- more --></p>
+
 <p>私がプログラミングや開発関連のことに興味を持ったのはたぶん5年くらい前のことだったと思います。それでどうやってそのあたりの技術などを身につけていくかといったことを考えて、やり始めたことの一つにはてなブックマークの人気エントリー、通称ホッテントリを読むというのがありました。</p>
 
 <p>当時はあまちゃんさん、ダンコーガイさんなどが猛威をふるっており、内容はよく理解できないまま、PerlやJavaScript、セキュリティ関連の話を読んだりしていました。今よりも技術的な話題が豊富で、最初にはじめるべきプログラミング言語は何か、PHP()など、何も知らない私には勉強になることばかりでした。そんな感じでホットエントリーをGoogleReaderに登録して長い間読んできましたが、ある時から配信される数が急激に増えました。1日30件くらいだったところが100件くらいになったと思います。他にもたくさんのブログをRSSリーダーに登録していましたので、この時点で消化するのがつらくなってきました。</p>
-
-<p> <!-- more --></p>
 
 <p>そんな中、忘れもしない2013年3月13日、GoogleからGoogleリーダー終了のお知らせがでました。私は泣く泣くFeedlyに乗り換えましたが、そのときに見るべきものに出会う確率が減ってきていると感じたコンテンツはばっさり切りました。ホットエントリーもこのときに購読を止めました。でも一度身についた習慣は変えられず、ホットエントリーが気になってしょうがありません。その結果、はてな製のiOSアプリを入れて暇なときに見にいくようになりました。でも同じエントリーがずっと上位にいすわっているんですよね。私が見たいのはホットエントリーの中の新着エントリーですが、それはかないませんでした。他のアプリなども試してみましたが自分の求めるものはなかったので、この時点で作ることを決意しました。ちょうと１年くらい前だと思います。</p>
 
@@ -111,9 +129,26 @@ App Store のリンクとアプリの紹介ページは以下になります。<
 
 <p>これですね。これを実現したのがHotentryになります。簡単に言うと、未読がたまらない、ホットエントリー専用RSSリーダーです。おかげで苦痛もなくスマートに大好きなホットエントリーを消化できるようになりました。個人的にはとても満足しています。同じような問題を抱えている方がいたら是非使ってもらいたいです。</p>
 
-<p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&amp;uo=4"><img src="/images/app_hotentry_120.png" alt="Hotentry" /></a></p>
+<div id='com-triaedz-hotentry' class='app-widget clearfix'>
+    <div class='app-icon'>
+        <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
+    </div>
+    <div class='app-info'>
+        <ul>
+            <li class="app-name">
+                <a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
+            </li>
+            <li class='artist-name'>
+                <a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
+            </li>
+            <li class='app-price'>
+                無料
+            </li>
 
-<p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&amp;uo=4">Hotentry - はてなブックマークの人気エントリー専用リーダー (App Store)</a></p>
+        </ul>
+    </div>
+</div>
+
 
 <p>しくみなどの詳細は後日このブログに書いていきたいと思います。</p>
 </div>
@@ -163,6 +198,8 @@ App Store のリンクとアプリの紹介ページは以下になります。<
         <a class="basic-alignment left" href="/blog/2014/03/27/presso/" title="Previous Post: Presso">&laquo; Presso</a>
       
       
+        <a class="basic-alignment right" href="/blog/2014/04/12/makingofhotentry01/" title="Next Post: Hotentryができるまで (1) - メインビュー">Hotentryができるまで (1) - メインビュー &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -174,6 +211,10 @@ App Store のリンクとアプリの紹介ページは以下になります。<
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/12/makingofhotentry01/">Hotentryができるまで (1) - メインビュー</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/04/04/hotentry/">はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。</a>
