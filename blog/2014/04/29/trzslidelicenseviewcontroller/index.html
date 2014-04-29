@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>iOS ライブラリー TRZSlideLicenseViewController をリリースしました。 - UI Foundations</title>
+  <meta name="author" content="86">
+
+  
+  <meta name="description" content="先月リリースした iOS アプリ Hotentry では、たくさんの便利なオープンソースライブラリーを使用しています。これらの助けがなければリリースにはたどりつけなかったと思います。言葉だけでは足りないこの感謝を表現するには、自らオープンソースライブラリーを作るしかないッ！ ということで作りました &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://86.triaedz.com/blog/2014/04/29/trzslidelicenseviewcontroller/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="UI Foundations" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+<link href="/stylesheets/appbox.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-50096832-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <img src="/images/ah_frame_transparent.png" />
+  <h1><a href="/">UI Foundations</a></h1>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">iOS ライブラリー TRZSlideLicenseViewController をリリースしました。</h1>
+    
+  </header>
+
+
+
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/dev/'>dev,</a>, <a class='category' href='/blog/categories/release/'>release</a>
+  
+</span>
+
+
+<div class="entry-content"><p>先月リリースした iOS アプリ <a href="http://triaedz.com/products/Hotentry/">Hotentry</a> では、たくさんの便利なオープンソースライブラリーを使用しています。これらの助けがなければリリースにはたどりつけなかったと思います。言葉だけでは足りないこの感謝を表現するには、自らオープンソースライブラリーを作るしかないッ！</p>
+
+<p>ということで作りました。 <a href="https://github.com/86/TRZSlideLicenseViewController">TRZSlideLicenseViewController</a> です。</p>
+
+<p> <!-- more --></p>
+
+<h2>TRZSlideLicenseViewController とは</h2>
+
+<p><a href="https://github.com/86/TRZSlideLicenseViewController">TRZSlideLicenseViewController</a> は、 iOS アプリで使用する 3rd パーティーライブラリーのライセンス情報をいい感じに表示してくれる UI ライブラリーです。ライブラリー管理ツール <a href="http://cocoapods.org/">CocoaPods</a> の使用が前提です。ビジュアルと動作は以下の GIF アニメーションでどうぞ。使い方は <a href="">Qiita</a> を見てください。</p>
+
+<p><img src="/images/TRZSlideLicenseViewController.gif" alt="TRZSlideLicenseViewController.gif" /></p>
+
+<h2>解決したかったこと</h2>
+
+<p>アプリにはライセンス表示画面がつきものです。アプリの機能とは無関係なので、手間をかけずに作りたいと思うのが普通ですが、地味に面倒なんですよね。操作性的にも解決したい問題がありましたし、その上でさくっと実装できるようなものができれば今回のオープンソース界に貢献したいという目的にもぴったりだと思いました。GitHubにもこれに特化したライブラリーはほとんど見つかりませんでしたし。</p>
+
+<h2>横スクロールの採用</h2>
+
+<p>一般的なライセンス画面は各ライセンスの情報をズラ～と縦に並べただけの画面が多いと思います。ライセンスの条文はとっても長いので、これだとすごく長いページになってしまうんですよね。まずこれを解決するために横スクロールの採用を考えました。条文の方はどれもだいたい同じ内容で、最初からすべて見えている必要性もないため、テキスト領域を固定にして、はみ出した部分は縦スクロールで見えるようにしました。</p>
+
+<h2>横スクロールの問題点</h2>
+
+<p>横スクロールにも問題点がありました。ページングを有効にしてしまうと、スクロールが1ページ単位になります。そうすると、例えば10ページほどスクロールしたあと、戻りたいときとか、操作ステップが激増してしまいます。これを解決するために、ある一定の強さを超えてフリックした場合は、ページングが解除され慣性スクロールするようにしました。減速してスクロールが停止したあとは、アニメーションで画面の端にで吸い付くようにもしています。とてもいい感じです。</p>
+
+<h2>最後に</h2>
+
+<p>現在 <a href="https://github.com/86/TRZSlideLicenseViewController">GitHub</a> でスターが13個!うれしい限りです。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">86</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-29T23:20:00+09:00" pubdate data-updated="true">Apr 29<span>th</span>, 2014</time>
+    </p>
+    
+      <div class="sharing">
+
+	<a href="http://b.hatena.ne.jp/entry/http://86.triaedz.com/blog/2014/04/29/trzslidelicenseviewcontroller/" class="hatena-bookmark-button" data-hatena-bookmark-title="iOS ライブラリー TRZSlideLicenseViewController をリリースしました。" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://86.triaedz.com/blog/2014/04/29/trzslidelicenseviewcontroller/" data-via="86" data-counturl="http://86.triaedz.com/blog/2014/04/29/trzslidelicenseviewcontroller/" >Tweet</a>
+  
+
+  
+
+  
+	<div class="fb-like" data-href="http://86.triaedz.com/blog/2014/04/29/trzslidelicenseviewcontroller/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+   
+
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/04/12/makingofhotentry01/" title="Previous Post: Hotentryができるまで (1) - メインビュー">&laquo; Hotentryができるまで (1) - メインビュー</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/29/trzslidelicenseviewcontroller/">iOS ライブラリー TRZSlideLicenseViewController をリリースしました。</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/12/makingofhotentry01/">Hotentryができるまで (1) - メインビュー</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/04/hotentry/">はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/27/presso/">Presso</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/18/hello/">hello!</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>About Me</h1>
+  <p><a href="http://yam86.flavors.me/">flavors.me</a></p>
+</section>
+<section>
+  <h1>My Products</h1>
+  <p><a href="https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4"><img src="/images/app_hotentry_120.png"><br/>Hotentry</a></p>
+</section>
+<section>
+  <h1>Latest Tweets</h1>
+<a class="twitter-timeline" href="https://twitter.com/86" data-widget-id="451350905808371713">@86 からのツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+<section>
+  <h1>Other links</h1>
+  <ul>
+	  <li><a href="http://www.pinterest.com/yam86/">Pinterest</a></li>
+	  <li><a href="http://instagram.com/86">Instagram</a></li>
+	  <li><a href="http://soundcloud.com/yam86">SoundCloud</a></li>
+	  <li><a href="http://qiita.com/yam86">Qiita</a></li>
+	  <li><a href="https://github.com/86">Github</a></li>
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - 86 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/javascripts/aharris.js"></script>
+
+</body>
+</html>

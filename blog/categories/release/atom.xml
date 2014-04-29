@@ -4,7 +4,7 @@
   <title><![CDATA[Category: release | UI Foundations]]></title>
   <link href="http://86.triaedz.com/blog/categories/release/atom.xml" rel="self"/>
   <link href="http://86.triaedz.com/"/>
-  <updated>2014-04-17T00:36:48+09:00</updated>
+  <updated>2014-04-29T23:37:06+09:00</updated>
   <id>http://86.triaedz.com/</id>
   <author>
     <name><![CDATA[86]]></name>
@@ -14,6 +14,41 @@
 
   
   <entry>
+    <title type="html"><![CDATA[iOS ライブラリー TRZSlideLicenseViewController をリリースしました。]]></title>
+    <link href="http://86.triaedz.com/blog/2014/04/29/trzslidelicenseviewcontroller/"/>
+    <updated>2014-04-29T23:20:00+09:00</updated>
+    <id>http://86.triaedz.com/blog/2014/04/29/trzslidelicenseviewcontroller</id>
+    <content type="html"><![CDATA[<p>先月リリースした iOS アプリ <a href="http://triaedz.com/products/Hotentry/">Hotentry</a> では、たくさんの便利なオープンソースライブラリーを使用しています。これらの助けがなければリリースにはたどりつけなかったと思います。言葉だけでは足りないこの感謝を表現するには、自らオープンソースライブラリーを作るしかないッ！</p>
+
+<p>ということで作りました。 <a href="https://github.com/86/TRZSlideLicenseViewController">TRZSlideLicenseViewController</a> です。</p>
+
+<p> <!-- more --></p>
+
+<h2>TRZSlideLicenseViewController とは</h2>
+
+<p><a href="https://github.com/86/TRZSlideLicenseViewController">TRZSlideLicenseViewController</a> は、 iOS アプリで使用する 3rd パーティーライブラリーのライセンス情報をいい感じに表示してくれる UI ライブラリーです。ライブラリー管理ツール <a href="http://cocoapods.org/">CocoaPods</a> の使用が前提です。ビジュアルと動作は以下の GIF アニメーションでどうぞ。使い方は <a href="">Qiita</a> を見てください。</p>
+
+<p><img src="/images/TRZSlideLicenseViewController.gif" alt="TRZSlideLicenseViewController.gif" /></p>
+
+<h2>解決したかったこと</h2>
+
+<p>アプリにはライセンス表示画面がつきものです。アプリの機能とは無関係なので、手間をかけずに作りたいと思うのが普通ですが、地味に面倒なんですよね。操作性的にも解決したい問題がありましたし、その上でさくっと実装できるようなものができれば今回のオープンソース界に貢献したいという目的にもぴったりだと思いました。GitHubにもこれに特化したライブラリーはほとんど見つかりませんでしたし。</p>
+
+<h2>横スクロールの採用</h2>
+
+<p>一般的なライセンス画面は各ライセンスの情報をズラ～と縦に並べただけの画面が多いと思います。ライセンスの条文はとっても長いので、これだとすごく長いページになってしまうんですよね。まずこれを解決するために横スクロールの採用を考えました。条文の方はどれもだいたい同じ内容で、最初からすべて見えている必要性もないため、テキスト領域を固定にして、はみ出した部分は縦スクロールで見えるようにしました。</p>
+
+<h2>横スクロールの問題点</h2>
+
+<p>横スクロールにも問題点がありました。ページングを有効にしてしまうと、スクロールが1ページ単位になります。そうすると、例えば10ページほどスクロールしたあと、戻りたいときとか、操作ステップが激増してしまいます。これを解決するために、ある一定の強さを超えてフリックした場合は、ページングが解除され慣性スクロールするようにしました。減速してスクロールが停止したあとは、アニメーションで画面の端にで吸い付くようにもしています。とてもいい感じです。</p>
+
+<h2>最後に</h2>
+
+<p>現在 <a href="https://github.com/86/TRZSlideLicenseViewController">GitHub</a> でスターが13個!うれしい限りです。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。]]></title>
     <link href="http://86.triaedz.com/blog/2014/04/04/hotentry/"/>
     <updated>2014-04-04T14:14:00+09:00</updated>
@@ -21,27 +56,7 @@
     <content type="html"><![CDATA[<p>はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。
 App Store のリンクとアプリの紹介ページは以下になります。</p>
 
-<p>
-<div id='com-triaedz-hotentry' class='app-widget clearfix'>
-	<div class='app-icon'>
-		<a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
-	</div>
-	<div class='app-info'>
-		<ul>
-			<li class="app-name">
-				<a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
-			</li>
-			<li class='artist-name'>
-				<a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
-			</li>
-			<li class='app-price'>
-				無料
-			</li>
-
-		</ul>
-  	</div>
-</div>
-</p>
+<p>{% app_store 828453642 %}</p>
 
 <p><a href="http://triaedz.com/products/Hotentry/">Hotentry (アプリの紹介ページ)</a></p>
 
@@ -84,27 +99,7 @@ App Store のリンクとアプリの紹介ページは以下になります。<
 
 <p>これですね。これを実現したのがHotentryになります。簡単に言うと、未読がたまらない、ホットエントリー専用RSSリーダーです。おかげで苦痛もなくスマートに大好きなホットエントリーを消化できるようになりました。個人的にはとても満足しています。同じような問題を抱えている方がいたら是非使ってもらいたいです。</p>
 
-<p>
-<div id='com-triaedz-hotentry' class='app-widget clearfix'>
-	<div class='app-icon'>
-		<a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
-	</div>
-	<div class='app-info'>
-		<ul>
-			<li class="app-name">
-				<a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
-			</li>
-			<li class='artist-name'>
-				<a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
-			</li>
-			<li class='app-price'>
-				無料
-			</li>
-
-		</ul>
-  	</div>
-</div>
-</p>
+<p>{% app_store 828453642 %}</p>
 
 <p>しくみなどの詳細は後日このブログに書いていきたいと思います。</p>
 ]]></content>
