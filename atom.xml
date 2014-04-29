@@ -3,7 +3,7 @@
   <title><![CDATA[UI Foundations]]></title>
   <link href="http://86.triaedz.com/atom.xml" rel="self"/>
   <link href="http://86.triaedz.com/"/>
-  <updated>2014-04-29T23:37:03+09:00</updated>
+  <updated>2014-04-29T23:45:17+09:00</updated>
   <id>http://86.triaedz.com/</id>
   <author>
     <name><![CDATA[86]]></name>
@@ -25,7 +25,7 @@
 
 <h2>TRZSlideLicenseViewController とは</h2>
 
-<p><a href="https://github.com/86/TRZSlideLicenseViewController">TRZSlideLicenseViewController</a> は、 iOS アプリで使用する 3rd パーティーライブラリーのライセンス情報をいい感じに表示してくれる UI ライブラリーです。ライブラリー管理ツール <a href="http://cocoapods.org/">CocoaPods</a> の使用が前提です。ビジュアルと動作は以下の GIF アニメーションでどうぞ。使い方は <a href="">Qiita</a> を見てください。</p>
+<p><a href="https://github.com/86/TRZSlideLicenseViewController">TRZSlideLicenseViewController</a> は、 iOS アプリで使用する 3rd パーティーライブラリーのライセンス情報をいい感じに表示してくれる UI ライブラリーです。ライブラリー管理ツール <a href="http://cocoapods.org/">CocoaPods</a> の使用が前提です。ビジュアルと動作は以下の GIF アニメーションでどうぞ。使い方は <a href="http://qiita.com/yam86/items/0272762d8b6feaa252cb">Qiita</a> を見てください。</p>
 
 <p><img src="http://86.triaedz.com/images/TRZSlideLicenseViewController.gif" alt="TRZSlideLicenseViewController.gif" /></p>
 
