@@ -4,7 +4,7 @@
   <title><![CDATA[Category: review | UI Foundations]]></title>
   <link href="http://86.triaedz.com/blog/categories/review/atom.xml" rel="self"/>
   <link href="http://86.triaedz.com/"/>
-  <updated>2014-04-30T00:09:20+09:00</updated>
+  <updated>2014-05-04T15:34:57+09:00</updated>
   <id>http://86.triaedz.com/</id>
   <author>
     <name><![CDATA[86]]></name>
@@ -27,7 +27,7 @@
 <li>記事のリスト見にくい。画像がでかすぎる。でか画像にはさまれた画像なしの記事は完全に埋没。</li>
 <li>カテゴリの切り替え、普通。</li>
 <li>Web画面せまい。上下両方にバーがあって邪魔。なぜスクロールで消えるようにしなかったし。</li>
-<li>あとはてぶアプリもだか横表示に対応して。</li>
+<li>あとはてぶアプリもだが横表示に対応して。</li>
 <li>コメントビュー普通。最初の1件が吹き出し表示されてるの邪魔でしかない。</li>
 <li>コメントビュー表示ボタンのアイコンが通知スタイルになっているが、何をやっても通知が消えることはない。精神的に追い詰められる。</li>
 <li>動作もっさり。でかい画像のロードのせいかスクロールがカクカクする。ひどいよ。</li>
