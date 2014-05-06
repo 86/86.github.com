@@ -4,7 +4,7 @@
   <title><![CDATA[Category: release | UI Foundations]]></title>
   <link href="http://86.triaedz.com/blog/categories/release/atom.xml" rel="self"/>
   <link href="http://86.triaedz.com/"/>
-  <updated>2014-05-04T15:34:57+09:00</updated>
+  <updated>2014-05-07T00:21:36+09:00</updated>
   <id>http://86.triaedz.com/</id>
   <author>
     <name><![CDATA[86]]></name>
@@ -56,27 +56,7 @@
     <content type="html"><![CDATA[<p>はてなブックマークの人気エントリー専用iOSリーダー『Hotentry』をリリースしました。
 App Store のリンクとアプリの紹介ページは以下になります。</p>
 
-<p>
-<div id='com-triaedz-hotentry' class='app-widget clearfix'>
-	<div class='app-icon'>
-		<a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
-	</div>
-	<div class='app-info'>
-		<ul>
-			<li class="app-name">
-				<a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
-			</li>
-			<li class='artist-name'>
-				<a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
-			</li>
-			<li class='app-price'>
-				無料
-			</li>
-
-		</ul>
-  	</div>
-</div>
-</p>
+<p>{% app_store 828453642 %}</p>
 
 <p><a href="http://triaedz.com/products/Hotentry/">Hotentry (アプリの紹介ページ)</a></p>
 
@@ -119,27 +99,7 @@ App Store のリンクとアプリの紹介ページは以下になります。<
 
 <p>これですね。これを実現したのがHotentryになります。簡単に言うと、未読がたまらない、ホットエントリー専用RSSリーダーです。おかげで苦痛もなくスマートに大好きなホットエントリーを消化できるようになりました。個人的にはとても満足しています。同じような問題を抱えている方がいたら是非使ってもらいたいです。</p>
 
-<p>
-<div id='com-triaedz-hotentry' class='app-widget clearfix'>
-	<div class='app-icon'>
-		<a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'><img src='http://a859.phobos.apple.com/us/r30/Purple6/v4/ec/ed/7f/eced7f58-6808-5c4d-f4bd-758bfc6df44a/AppIcon60x60_2x.png'></a>
-	</div>
-	<div class='app-info'>
-		<ul>
-			<li class="app-name">
-				<a href='https://itunes.apple.com/jp/app/hotentry-hatenabukkumakuno/id828453642?mt=8&uo=4' target='_blank'>Hotentry - はてなブックマークの人気エントリー専用リーダー</a>
-			</li>
-			<li class='artist-name'>
-				<a href='https://itunes.apple.com/jp/artist/daisuke-yamanaka/id828453645?uo=4' target='_blank'>DAISUKE YAMANAKA</a>
-			</li>
-			<li class='app-price'>
-				無料
-			</li>
-
-		</ul>
-  	</div>
-</div>
-</p>
+<p>{% app_store 828453642 %}</p>
 
 <p>しくみなどの詳細は後日このブログに書いていきたいと思います。</p>
 ]]></content>
